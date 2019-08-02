@@ -1,0 +1,31 @@
+{
+  "name": "ts-storage",
+  "version": "0.0.1",
+  "description": "ts-storage",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run lint && tsc",
+    "start": "npm run lint && tsc && node dist/index.js",
+    "lint": "tslint -p ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bizarim/ts-storage.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bizarim/ts-storage/issues"
+  },
+  "homepage": "https://github.com/bizarim/ts-storage#readme",
+  "devDependencies": {
+    "ts-common": "git+https://github.com/bizarim/ts-common.git#master",
+    "@types/node": "^12.6.2",
+    "@types/mysql2": "github:types/mysql2#semver:1.0.0",
+    "tslint": "^5.18.0",
+    "tslint-config-standard": "^8.0.1",
+    "typescript": "^3.5.3"
+  }
+}
