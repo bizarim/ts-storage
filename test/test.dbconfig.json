@@ -1,0 +1,16 @@
+{
+    "dbs": {
+        "wallet" : {
+            "host": "192.168.4.54",
+            "port": "3306",
+            "user": "root",
+            "password": "Qwewe11!!",
+            "database": "walletdb_pickara",
+            "connectionLimit": 50,
+            "waitForConnections": true,
+            "queueLimit": 0,
+            "multipleStatements": false,
+            "dateStrings": "date"
+        }
+    }
+}

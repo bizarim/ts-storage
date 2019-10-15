@@ -1,13 +1,15 @@
 {
   "name": "ts-storage",
-  "version": "0.0.1",
+  "version": "0.1.105",
   "description": "ts-storage",
-  "main": "index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm run lint && tsc",
+    "test": "npm run build && mocha --require ts-node/register 'test/**/*.test.ts'",
+    "build": "npm run lint && rimraf dist && tsc",
     "start": "npm run lint && tsc && node dist/index.js",
-    "lint": "tslint -p ."
+    "lint": "tslint -p .",
+    "remove": "rimraf dist"
   },
   "repository": {
     "type": "git",
@@ -20,12 +22,24 @@
     "url": "https://github.com/bizarim/ts-storage/issues"
   },
   "homepage": "https://github.com/bizarim/ts-storage#readme",
-  "devDependencies": {
-    "ts-common": "git+https://github.com/bizarim/ts-common.git#master",
-    "@types/node": "^12.6.2",
+  "dependencies": {
+    "@types/ioredis": "^4.0.18",
     "@types/mysql2": "github:types/mysql2#semver:1.0.0",
+    "ioredis": "^4.14.1",
+    "mysql2": "^1.6.5",
+    "rimraf": "^3.0.0",
+    "ts-common": "git+https://github.com/bizarim/ts-common.git#master"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.6.2",
+    "@types/supertest": "^2.0.8",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0",
+    "supertest": "^4.0.2",
+    "ts-node": "^8.3.0",
     "tslint": "^5.18.0",
-    "tslint-config-standard": "^8.0.1",
     "typescript": "^3.5.3"
   }
 }

@@ -1,0 +1,12 @@
+{
+    "code": "test",
+    "uuid": "abc",
+    "accessToken": "OUBtZXRANTE4NzNiNzY3MDVk",
+    "coin": "btc",
+    "walletId": "test",
+    "transIds": [
+        "32e9c635c79717cd1c3a6eb3d81e176c40b941fb5323ae53426b8bf676f4f95f",
+        "3ce0ec99c5ca3d516bb8337ebd5dc8b8cf7c99bfeb3e53ec0d2378fb7ca90502",
+        "test"
+    ]
+}

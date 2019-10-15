@@ -1,5 +1,7 @@
-import { PoolOptions } from 'mysql2/promise';
-
+import { PoolOptions } from '../index';
+/**
+ * db config
+ */
 export class DbConfig {
-  public dbs: { [key: string]: PoolOptions };
+    public dbs: { [key: string]: PoolOptions };
 }

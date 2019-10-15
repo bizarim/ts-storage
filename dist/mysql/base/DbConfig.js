@@ -1,8 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var DbConfig = /** @class */ (function () {
-    function DbConfig() {
-    }
-    return DbConfig;
-}());
+/**
+ * db config
+ */
+class DbConfig {
+}
 exports.DbConfig = DbConfig;
+//# sourceMappingURL=DbConfig.js.map

@@ -1,0 +1,1 @@
+{"version":3,"file":"DbException.js","sourceRoot":"","sources":["../../../src/mysql/exception/DbException.ts"],"names":[],"mappings":";;AAAA,yCAAuC;AAEvC,MAAa,WAAY,SAAQ,KAAK;IAGlC,YAAY,IAAgB;QACxB,KAAK,EAAE,CAAC;QAHL,SAAI,GAAe,sBAAU,CAAC,OAAO,CAAC;QAIzC,IAAI,CAAC,IAAI,GAAG,IAAI,CAAC;QACjB,IAAI,CAAC,OAAO,GAAG,aAAa,CAAC;IACjC,CAAC;CACJ;AARD,kCAQC"}
