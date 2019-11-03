@@ -33,12 +33,20 @@ class StorageService {
             return undefined;
         return this.pool.getPool(db);
     }
-    /** procedure 얻기 */
-    getProcedure(db, type) {
-        return new type().initialize(this.getPool(db), this.logger);
+    /**
+     * Database Access Object
+     * @param db 물리 db
+     * @param dao dao
+     */
+    getDao(db, dao) {
+        return new dao().initialize(this.getPool(db), this.logger);
     }
-    getRedisCommand(type) {
-        return new type().initialize(this.redis, this.logger);
+    /**
+     * Redis Access Object
+     * @param rao rao
+     */
+    getRao(rao) {
+        return new rao().initialize(this.redis, this.logger);
     }
 }
 exports.StorageService = StorageService;

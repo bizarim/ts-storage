@@ -9,5 +9,5 @@ __export(require("./base"));
 __export(require("./exception"));
 __export(require("./resultset"));
 __export(require("./query"));
-__export(require("./userProcedure"));
+__export(require("./dao"));
 //# sourceMappingURL=index.js.map

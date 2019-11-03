@@ -11,11 +11,19 @@ export declare class StorageService implements ISharedService {
     initialize(path: string, logger?: ILogger): Promise<void>;
     /** Repository connection pool 얻기 */
     protected getPool(db: eDb): Pool | undefined;
-    /** procedure 얻기 */
-    getProcedure<T extends IDbExector>(db: eDb, type: {
+    /**
+     * Database Access Object
+     * @param db 물리 db
+     * @param dao dao
+     */
+    getDao<T extends IDbExector>(db: eDb, dao: {
         new (): T;
     }): T;
-    getRedisCommand<T extends IRedsExector>(type: {
+    /**
+     * Redis Access Object
+     * @param rao rao
+     */
+    getRao<T extends IRedsExector>(rao: {
         new (): T;
     }): T;
 }
