@@ -6,9 +6,9 @@ import { DbException } from '../exception';
 
 /**
  * [ User Procedure ]
- * Sample user procedure
+ * DaoXXXXXXX
  */
-export class UpXXXXXXX extends TRExector {
+export class DaoXXXXXXX extends TRExector {
     private query: ProviderQuery;
 
     initialize(pool: Pool, logger?: ILogger): IDbExector {

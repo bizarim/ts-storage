@@ -3,4 +3,4 @@ export * from './base';
 export * from './exception';
 export * from './resultset';
 export * from './query';
-export * from './userProcedure';
+export * from './dao';

@@ -9,6 +9,7 @@ export class StorageService implements ISharedService {
     protected loader: ConfigLoader;
     protected config: StorageConfig;
     private bInit: boolean = false;
+
     async initialize(path: string, logger?: ILogger): Promise<void> {
         this.logger = logger;
         this.loader = new ConfigLoader();
@@ -28,13 +29,21 @@ export class StorageService implements ISharedService {
         return this.pool.getPool(db);
     }
 
-    /** procedure 얻기 */
-    public getProcedure<T extends IDbExector>(db: eDb, type: { new(): T; }): T {
-        return new type().initialize(this.getPool(db) as Pool, this.logger) as T;
+    /**
+     * Database Access Object
+     * @param db 물리 db
+     * @param dao dao
+     */
+    public getDao<T extends IDbExector>(db: eDb, dao: { new(): T; }): T {
+        return new dao().initialize(this.getPool(db) as Pool, this.logger) as T;
     }
 
-    public getRedisCommand<T extends IRedsExector>(type: { new(): T; }): T {
-        return new type().initialize(this.redis, this.logger) as T;
+    /**
+     * Redis Access Object
+     * @param rao rao
+     */
+    public getRao<T extends IRedsExector>(rao: { new(): T; }): T {
+        return new rao().initialize(this.redis, this.logger) as T;
     }
 
 }
