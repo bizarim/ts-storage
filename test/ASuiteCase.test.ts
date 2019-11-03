@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import { eErrorCode, eDb } from 'ts-common';
-import { UpXXXXXXX, UrcSetXXXXX } from '../src';
+import { RaoSetXXXXX, DaoXXXXXXX } from '../src';
 import { StorageService } from '../src/service/StorageService';
 
 describe('ASuiteCase.test', function () {
@@ -9,7 +9,7 @@ describe('ASuiteCase.test', function () {
         const storage = new StorageService();
 
         const urt = await storage
-            .getProcedure(eDb.wallet, UpXXXXXXX)
+            .getDao(eDb.wallet, DaoXXXXXXX)
             .initParams('', '', 0)
             .execute();
 
@@ -20,10 +20,10 @@ describe('ASuiteCase.test', function () {
 
     });
 
-    it('사용 방법', async function () {
+    it('레디스 사용 방법', async function () {
         const storage = new StorageService();
         const urcRt = await storage
-            .getRedisCommand(UrcSetXXXXX)
+            .getRao(RaoSetXXXXX)
             .initParam('', '')
             .execute();
 
