@@ -5,13 +5,15 @@ import { RedisClients } from './RedisClients';
 import { RedisException } from './RedisException';
 
 /**
- * user redis command
+ * Redis Access Object
  */
-export class AbsRedisCommand implements IRedsExector {
+export abstract class RedisAccessObject implements IRedsExector {
     logger?: ILogger;
     error: eErrorCode;
     clinets?: RedisClients;
-    protected constructor() { }
+
+    abstract async onHandle(clinets: RedisClients): Promise<IUpResult>;
+
     initialize(clinets: RedisClients, logger: ILogger): IRedsExector {
         this.error = eErrorCode.Success;
         this.clinets = clinets;
@@ -22,9 +24,7 @@ export class AbsRedisCommand implements IRedsExector {
         this.logger = undefined;
         this.clinets = undefined;
     }
-    protected async onHandle(clinets: RedisClients): Promise<IUpResult> {
-        throw new Error('Method not implemented.');
-    }
+
     async execute(): Promise<IUpResult> {
         if (undefined === this.clinets) return this.createErrOnEx(eErrorCode.REDIS_ERROR);
         if (this.error != eErrorCode.Success) return this.createErrOnEx(this.error);

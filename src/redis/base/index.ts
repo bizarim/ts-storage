@@ -1,4 +1,4 @@
-export * from './AbsRedisCommand';
+export * from './RedisAccessObject';
 export * from './IRedsExector';
 export * from './KeyMapper';
 export * from './RedisClients';

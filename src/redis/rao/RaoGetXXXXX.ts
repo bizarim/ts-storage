@@ -1,4 +1,4 @@
-import { AbsRedisCommand } from '../base/AbsRedisCommand';
+import { RedisAccessObject } from '../base/RedisAccessObject';
 import { eErrorCode, IUpResult, UrtError } from 'ts-common';
 import { RedisSchema } from '../keyMapper/RedisSchema';
 import { RtsRedisProvider, UrtGetRedisProvider } from '../models/models';
@@ -7,10 +7,10 @@ import { IRedsExector } from '..';
 import { RhoProvider } from '../keyMapper';
 
 /**
- * user redis commnad
- * UrcGetXXXXX
+ * redis access object
+ * RaoGetXXXXX
  */
-export class UrcGetXXXXX extends AbsRedisCommand {
+export class RaoGetXXXXX extends RedisAccessObject {
     pvKey: string;
     tkKey: string;
     code: string;
@@ -51,26 +51,8 @@ export class UrcGetXXXXX extends AbsRedisCommand {
         if (undefined === redisTk) return new UrtError(eErrorCode.REDIS_CONN_ERROR);
 
 
-        const rtPv = await redisPv.hgetall(this.pvKey) as RhoProvider;
-        if (undefined === rtPv || null === rtPv) return new UrtError(eErrorCode.REDIS_ERROR);
-        if (undefined === rtPv.id) return new UrtError(eErrorCode.UnmanagedProvider);
-        if (undefined !== this.nonce) {
-            if (this.nonce <= rtPv.nonce) return new UrtError(eErrorCode.InvalidRequest);
-        }
-
-        const rtTk = await redisTk.get(this.tkKey);
-        if (undefined === rtTk || null === rtTk) {
-            return new UrtError(eErrorCode.ExpireTokenAccess);
-        }
-
-        // const tt = await redisPv.multi().hset('test', '', '').expire('test', 10);
-        const target = new RtsRedisProvider();
-        // string으로 나왔었나? object로 나왔었나?
-        Object.assign(target, rtPv);    // deepCopy
-
         return {
             errcode: eErrorCode.Success,
-            context: target
         } as UrtGetRedisProvider;
     }
 

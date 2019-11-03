@@ -1,14 +1,14 @@
 import { eErrorCode, IUpResult, UrtError, UrtResult, Global } from 'ts-common';
-import { AbsRedisCommand } from '../base/AbsRedisCommand';
+import { RedisAccessObject } from '../base/RedisAccessObject';
 import { RedisSchema } from '../keyMapper/RedisSchema';
 import { RedisClients, eRedisDb } from '../base/RedisClients';
 import { RedisException, IRedsExector, RhoProvider } from '..';
 
 /**
- * user redis commnad
- * UrcSetXXXXX
+ * redis access object
+ * RaoSetXXXXX
  */
-export class UrcSetXXXXX extends AbsRedisCommand {
+export class RaoSetXXXXX extends RedisAccessObject {
     private pvKey: string;
     private tkKey: string;
 
